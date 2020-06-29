@@ -10,7 +10,6 @@ function Routes() {
         <Route path="/" exact component = {Home} />
         <Route path="/user" component = {User} />
     </Switch>
-
   );
 }
 
