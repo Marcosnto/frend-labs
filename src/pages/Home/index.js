@@ -3,80 +3,8 @@ import React, { useState, useEffect } from "react";
 import Table from "../../components/Table";
 import api from "../../services/api";
 
-// const state = [
-//   {
-//     id: 1,
-//     name: "Leanne Graham",
-//     username: "Bret",
-//     age: 55,
-//     email: "Sincere@april.biz",
-//     address: {
-//       street: "Kulas Light",
-//       suite: "Apt. 556",
-//       city: "Gwenborough",
-//       zipcode: "92998-3874",
-//       geo: {
-//         lat: "-37.3159",
-//         lng: "81.1496",
-//       },
-//     },
-//     phone: "1-770-736-8031 x56442",
-//     website: "hildegard.org",
-//     company: {
-//       name: "Romaguera-Crona",
-//       catchPhrase: "Multi-layered client-server neural-net",
-//       bs: "harness real-time e-markets",
-//     },
-//   },
-//   {
-//     id: 2,
-//     name: "Ervin Howell",
-//     username: "Antonette",
-//     age: 5,
-//     email: "Shanna@melissa.tv",
-//     address: {
-//       street: "Victor Plains",
-//       suite: "Suite 879",
-//       city: "Wisokyburgh",
-//       zipcode: "90566-7771",
-//       geo: {
-//         lat: "-43.9509",
-//         lng: "-34.4618",
-//       },
-//     },
-//     phone: "010-692-6593 x09125",
-//     website: "anastasia.net",
-//     company: {
-//       name: "Deckow-Crist",
-//       catchPhrase: "Proactive didactic contingency",
-//       bs: "synergize scalable supply-chains",
-//     },
-//   },
-//   {
-//     id: 3,
-//     name: "Clementine Bauch",
-//     username: "Samantha",
-//     age: 15,
-//     email: "Nathan@yesenia.net",
-//     address: {
-//       street: "Douglas Extension",
-//       suite: "Suite 847",
-//       city: "McKenziehaven",
-//       zipcode: "59590-4157",
-//       geo: {
-//         lat: "-68.6102",
-//         lng: "-47.0653",
-//       },
-//     },
-//     phone: "1-463-123-4447",
-//     website: "ramiro.info",
-//     company: {
-//       name: "Romaguera-Jacobson",
-//       catchPhrase: "Face to face bifurcated interface",
-//       bs: "e-enable strategic applications",
-//     },
-//   },
-// ];
+let orderAge = false;
+let orderId = false;
 
 function Home() {
   const [data, setData] = useState([]);
@@ -86,6 +14,38 @@ function Home() {
       setData(response.data);
     });
   }, []);
+
+  function order(type) {
+    console.log(type);
+    switch (type) {
+      case "id":
+        if (orderId === false) {
+          const order = data.sort((a, b) => a.id - b.id);
+          setData([...order]);
+          orderId = true;
+        } else if (orderId === true) {
+          const desorder = data.reverse();
+          setData([...desorder]);
+          orderId = false;
+        }
+        break;
+
+      case "age":
+        if (orderAge === false) {
+          const order = data.sort((a, b) => a.age - b.age);
+          setData([...order]);
+          orderAge = true;
+        } else if (orderAge === true) {
+          const desorder = data.reverse();
+          setData([...desorder]);
+          orderAge = false;
+        }
+        break;
+
+      default:
+        console.log("Error in sort");
+    }
+  }
 
   const tableHead = ["Id", "Nome", "Idade", "Email", "Ações"];
   const tableDataItem = ["id", "name", "age", "email"];
@@ -97,6 +57,7 @@ function Home() {
         tableData={data}
         tableDataItem={tableDataItem}
         tableName={"Usuários"}
+        orderFunction={order}
       />
     </>
   );

@@ -15,7 +15,6 @@ function User() {
     });
   }, [params.id]);
 
-  console.log(user);
   //user
   const tableUser = [
     "Id",

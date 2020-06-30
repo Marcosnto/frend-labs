@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaSortAmountUpAlt } from "react-icons/fa";
 
-function Table({ tableHead, tableData, tableDataItem, tableName, typeTable }) {
+function Table({
+  tableHead,
+  tableData,
+  tableDataItem,
+  tableName,
+  typeTable,
+  orderFunction,
+}) {
   let data = tableData;
 
   if (typeTable) {
@@ -12,6 +20,23 @@ function Table({ tableHead, tableData, tableDataItem, tableName, typeTable }) {
     data = tempo;
   }
 
+  function order(column, orderFunction) {
+    if (column === "Id" || column === "Idade") {
+      let type = column === "Idade" ? "age" : "id";
+      return (
+        <h3>
+          <FaSortAmountUpAlt
+            type="button"
+            onClick={() => orderFunction(type)}
+          />
+          {column}
+        </h3>
+      );
+    } else {
+      return column;
+    }
+  }
+
   return (
     <>
       <h1>{tableName}</h1>
@@ -19,7 +44,9 @@ function Table({ tableHead, tableData, tableDataItem, tableName, typeTable }) {
         <thead>
           <tr>
             {tableHead.map((column, index) => (
-              <th key={index}>{column}</th>
+              <th key={index}>
+                {orderFunction ? order(column, orderFunction) : column}
+              </th>
             ))}
           </tr>
         </thead>
