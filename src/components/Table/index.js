@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Table({ tableHead, tableData, tableDataItem, tableName, typeTable }) {
   let data = tableData;
+
   if (typeTable) {
-    const tempo = [];
-    data.map(single => {
+    let tempo = [];
+    data.forEach(single => {
       tempo.push(single[typeTable]);
     });
     data = tempo;
@@ -29,7 +31,9 @@ function Table({ tableHead, tableData, tableDataItem, tableName, typeTable }) {
               ))}
               {tableHead.indexOf("Ações") !== -1 ? (
                 <td key={"btnDetails"}>
-                  <button typeof="button">Detalhes</button>
+                  <Link key={singleData.id} to={`/user/${singleData.id}`}>
+                    <button typeof="button">Detalhes</button>
+                  </Link>
                 </td>
               ) : null}
             </tr>
