@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import { Link, useRouteMatch } from "react-router-dom";
 
-import { BtnBackHome, Title } from "./style";
-
-import Table from "../../components/Table";
 import api from "../../services/api";
+import extractSurname from "../../utils/extractSurname";
+
+import { BtnBackHome, Title } from "./style";
+import Table from "../../components/Table";
 
 function User() {
   const [user, setUser] = useState([]);
@@ -14,7 +14,8 @@ function User() {
 
   useEffect(() => {
     api.get(`users/${params.id}`).then(response => {
-      setUser([response.data]);
+      let user = extractSurname([response.data]);
+      setUser(user);
     });
   }, [params.id]);
 
@@ -22,6 +23,7 @@ function User() {
   const tableUser = [
     "Id",
     "Nome",
+    "Sobrenome",
     "UserName",
     "Idade",
     "Email",
@@ -31,6 +33,7 @@ function User() {
   const dataTableUser = [
     "id",
     "name",
+    "surname",
     "username",
     "age",
     "email",

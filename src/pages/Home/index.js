@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Table from "../../components/Table";
 import api from "../../services/api";
+import extractSurname from "../../utils/extractSurname";
 
 import { Title, Pagination } from "./styles.js";
 
@@ -11,6 +12,8 @@ let orderId = false;
 
 function Home() {
   const [data, setData] = useState([]);
+
+  //Pagination
   const [totalUsers, setTotalUsers] = useState([]);
   const [initialPages, setInitialPages] = useState(0);
   const [endPages, setEndPages] = useState(5);
@@ -24,13 +27,13 @@ function Home() {
 
   useEffect(() => {
     api.get(`/users?_start=${initialPages}&_end=${endPages}`).then(response => {
-      setData(response.data);
+      let users = extractSurname(response.data);
+      setData(users);
     });
   }, [endPages, initialPages]);
 
   //Sort id/age
   function order(type) {
-    console.log(type);
     switch (type) {
       case "id":
         if (orderId === false) {
@@ -62,8 +65,8 @@ function Home() {
   }
 
   //Table variables
-  const tableHead = ["Id", "Nome", "Idade", "Email", "Ações"];
-  const tableDataItem = ["id", "name", "age", "email"];
+  const tableHead = ["Id", "Nome", "Sobrenome", "Idade", "Email", "Ações"];
+  const tableDataItem = ["id", "name", "surname", "age", "email"];
 
   //Pagination
   let pages = [],
@@ -86,7 +89,7 @@ function Home() {
 
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
     pages.push(
-      <li>
+      <li key={pageNumber}>
         <button onClick={() => pagination(pageNumber)}>{pageNumber}</button>
       </li>
     );
