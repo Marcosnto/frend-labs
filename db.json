@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Leanne Graham",
       "username": "Bret",
-      "age":19,
+      "age": 19,
       "email": "Sincere@april.biz",
       "address": {
         "street": "Kulas Light",
@@ -12,8 +12,8 @@
         "city": "Gwenborough",
         "zipcode": "92998-3874",
         "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
+          "lat": "38.736946",
+          "lng": "-9.142685"
         }
       },
       "phone": "1-770-736-8031 x56442",
@@ -28,7 +28,7 @@
       "id": 2,
       "name": "Ervin Howell",
       "username": "Antonette",
-      "age":23,
+      "age": 23,
       "email": "Shanna@melissa.tv",
       "address": {
         "street": "Victor Plains",
@@ -52,7 +52,7 @@
       "id": 3,
       "name": "Clementine Bauch",
       "username": "Samantha",
-      "age":49,
+      "age": 49,
       "email": "Nathan@yesenia.net",
       "address": {
         "street": "Douglas Extension",
@@ -76,7 +76,7 @@
       "id": 4,
       "name": "Patricia Lebsack",
       "username": "Karianne",
-      "age":22,
+      "age": 22,
       "email": "Julianne.OConner@kory.org",
       "address": {
         "street": "Hoeger Mall",
@@ -100,7 +100,7 @@
       "id": 5,
       "name": "Chelsey Dietrich",
       "username": "Kamren",
-      "age":49,
+      "age": 49,
       "email": "Lucio_Hettinger@annie.ca",
       "address": {
         "street": "Skiles Walks",
@@ -124,7 +124,7 @@
       "id": 6,
       "name": "Mrs. Dennis Schulist",
       "username": "Leopoldo_Corkery",
-      "age":59,
+      "age": 59,
       "email": "Karley_Dach@jasper.info",
       "address": {
         "street": "Norberto Crossing",
@@ -148,7 +148,7 @@
       "id": 7,
       "name": "Kurtis Weissnat",
       "username": "Elwyn.Skiles",
-      "age":28,
+      "age": 28,
       "email": "Telly.Hoeger@billy.biz",
       "address": {
         "street": "Rex Trail",
@@ -172,7 +172,7 @@
       "id": 8,
       "name": "Nicholas Runolfsdottir V",
       "username": "Maxime_Nienow",
-      "age":36,
+      "age": 36,
       "email": "Sherwood@rosamond.me",
       "address": {
         "street": "Ellsworth Summit",
@@ -196,7 +196,7 @@
       "id": 9,
       "name": "Glenna Reichert",
       "username": "Delphine",
-      "age":48,
+      "age": 48,
       "email": "Chaim_McDermott@dana.io",
       "address": {
         "street": "Dayna Park",
@@ -220,7 +220,7 @@
       "id": 10,
       "name": "Clementina DuBuque",
       "username": "Moriah.Stanton",
-      "age":58,
+      "age": 58,
       "email": "Rey.Padberg@karina.biz",
       "address": {
         "street": "Kattie Turnpike",
@@ -244,7 +244,7 @@
       "id": 11,
       "name": "Leanne Graham",
       "username": "Bret",
-      "age":69,
+      "age": 69,
       "email": "Sincere@april.biz",
       "address": {
         "street": "Kulas Light",
@@ -268,7 +268,7 @@
       "id": 12,
       "name": "Ervin Howell",
       "username": "Antonette",
-      "age":65,
+      "age": 65,
       "email": "Shanna@melissa.tv",
       "address": {
         "street": "Victor Plains",
@@ -292,7 +292,7 @@
       "id": 13,
       "name": "Clementine Bauch",
       "username": "Samantha",
-      "age":33,
+      "age": 33,
       "email": "Nathan@yesenia.net",
       "address": {
         "street": "Douglas Extension",
@@ -316,7 +316,7 @@
       "id": 14,
       "name": "Patricia Lebsack",
       "username": "Karianne",
-      "age":37,
+      "age": 37,
       "email": "Julianne.OConner@kory.org",
       "address": {
         "street": "Hoeger Mall",
@@ -340,7 +340,7 @@
       "id": 15,
       "name": "Chelsey Dietrich",
       "username": "Kamren",
-      "age":66,
+      "age": 66,
       "email": "Lucio_Hettinger@annie.ca",
       "address": {
         "street": "Skiles Walks",
@@ -364,7 +364,7 @@
       "id": 16,
       "name": "Mrs. Dennis Schulist",
       "username": "Leopoldo_Corkery",
-      "age":70,
+      "age": 70,
       "email": "Karley_Dach@jasper.info",
       "address": {
         "street": "Norberto Crossing",
@@ -388,7 +388,7 @@
       "id": 17,
       "name": "Kurtis Weissnat",
       "username": "Elwyn.Skiles",
-      "age":77,
+      "age": 77,
       "email": "Telly.Hoeger@billy.biz",
       "address": {
         "street": "Rex Trail",
@@ -412,7 +412,7 @@
       "id": 18,
       "name": "Nicholas Runolfsdottir V",
       "username": "Maxime_Nienow",
-      "age":32,
+      "age": 32,
       "email": "Sherwood@rosamond.me",
       "address": {
         "street": "Ellsworth Summit",
@@ -436,7 +436,7 @@
       "id": 19,
       "name": "Glenna Reichert",
       "username": "Delphine",
-      "age":22,
+      "age": 22,
       "email": "Chaim_McDermott@dana.io",
       "address": {
         "street": "Dayna Park",
@@ -460,7 +460,7 @@
       "id": 20,
       "name": "Clementina DuBuque",
       "username": "Moriah.Stanton",
-      "age":25,
+      "age": 25,
       "email": "Rey.Padberg@karina.biz",
       "address": {
         "street": "Kattie Turnpike",

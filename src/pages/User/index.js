@@ -7,6 +7,8 @@ import extractSurname from "../../utils/extractSurname";
 import { BtnBackHome, Title } from "./style";
 import Table from "../../components/Table";
 
+import Maps from "../../components/Maps";
+
 function User() {
   const [user, setUser] = useState([]);
 
@@ -18,6 +20,11 @@ function User() {
       setUser(user);
     });
   }, [params.id]);
+
+  let geo;
+  user.forEach(data => {
+    geo = data.address.geo;
+  });
 
   //user
   const tableUser = [
@@ -65,6 +72,7 @@ function User() {
         typeTable={"address"}
         tableName={"Endereço"}
       />
+      <Maps key="maps" location={geo} />
       <Table
         tableHead={tableCompany}
         tableDataItem={dataTableCompany}
