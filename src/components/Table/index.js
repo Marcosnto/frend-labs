@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaSortAmountUpAlt } from "react-icons/fa";
+
+import { TableStyle, TitleTable } from "./styles.js";
+import { MdSwapVert } from "react-icons/md";
 
 function Table({
   tableHead,
@@ -25,10 +27,7 @@ function Table({
       let type = column === "Idade" ? "age" : "id";
       return (
         <h3>
-          <FaSortAmountUpAlt
-            type="button"
-            onClick={() => orderFunction(type)}
-          />
+          <MdSwapVert type="button" onClick={() => orderFunction(type)} />
           {column}
         </h3>
       );
@@ -39,8 +38,8 @@ function Table({
 
   return (
     <>
-      <h1>{tableName}</h1>
-      <table>
+      <TitleTable>{tableName}</TitleTable>
+      <TableStyle>
         <thead>
           <tr>
             {tableHead.map((column, index) => (
@@ -66,7 +65,7 @@ function Table({
             </tr>
           ))}
         </tbody>
-      </table>
+      </TableStyle>
     </>
   );
 }

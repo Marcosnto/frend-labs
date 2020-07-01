@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import Table from "../../components/Table";
 import api from "../../services/api";
 
+import { Title, Pagination } from "./styles.js";
+
+//Variables for sort
 let orderAge = false;
 let orderId = false;
 
@@ -84,14 +87,14 @@ function Home() {
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
     pages.push(
       <li>
-        <i onClick={() => pagination(pageNumber)}>{pageNumber}</i>
+        <button onClick={() => pagination(pageNumber)}>{pageNumber}</button>
       </li>
     );
   }
 
   return (
     <>
-      <h1>Supply Labs</h1>
+      <Title>Supply Labs</Title>
       <Table
         tableHead={tableHead}
         tableData={data}
@@ -99,9 +102,7 @@ function Home() {
         tableName={"Usuários"}
         orderFunction={order}
       />
-      <div>
-        <ul>{pages}</ul>
-      </div>
+      <Pagination>{pages}</Pagination>
     </>
   );
 }

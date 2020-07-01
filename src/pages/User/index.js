@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+import { Link, useRouteMatch } from "react-router-dom";
+
+import { BtnBackHome, Title } from "./style";
+
 import Table from "../../components/Table";
 import api from "../../services/api";
-import { useRouteMatch } from "react-router-dom";
 
 function User() {
   const [user, setUser] = useState([]);
@@ -45,7 +48,7 @@ function User() {
 
   return (
     <>
-      <h1>Detalhes</h1>
+      <Title>Detalhes</Title>
       <Table
         tableHead={tableUser}
         tableDataItem={dataTableUser}
@@ -66,6 +69,13 @@ function User() {
         typeTable={"company"}
         tableName={"Empresa"}
       />
+      <BtnBackHome>
+        <button>
+          <Link key="btnBackHome" to="/">
+            Voltar
+          </Link>
+        </button>
+      </BtnBackHome>
     </>
   );
 }
