@@ -8,13 +8,24 @@ let orderId = false;
 
 function Home() {
   const [data, setData] = useState([]);
+  const [totalUsers, setTotalUsers] = useState([]);
+  const [initialPages, setInitialPages] = useState(0);
+  const [endPages, setEndPages] = useState(5);
+  const postsPerPage = 5;
 
   useEffect(() => {
     api.get("/users").then(response => {
+      setTotalUsers(response.data.length);
+    });
+  }, [data]);
+
+  useEffect(() => {
+    api.get(`/users?_start=${initialPages}&_end=${endPages}`).then(response => {
       setData(response.data);
     });
-  }, []);
+  }, [endPages, initialPages]);
 
+  //Sort id/age
   function order(type) {
     console.log(type);
     switch (type) {
@@ -47,8 +58,37 @@ function Home() {
     }
   }
 
+  //Table variables
   const tableHead = ["Id", "Nome", "Idade", "Email", "Ações"];
   const tableDataItem = ["id", "name", "age", "email"];
+
+  //Pagination
+  let pages = [],
+    startPage = "",
+    endPage = "";
+
+  const totalPages = Math.ceil(totalUsers / postsPerPage);
+
+  function pagination(page) {
+    if (page === 1) {
+      startPage = 0;
+      endPage = postsPerPage;
+    } else {
+      endPage = page * (totalPages + 1);
+      startPage = endPage - postsPerPage;
+    }
+    setInitialPages(startPage);
+    setEndPages(endPage);
+  }
+
+  for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+    pages.push(
+      <li>
+        <i onClick={() => pagination(pageNumber)}>{pageNumber}</i>
+      </li>
+    );
+  }
+
   return (
     <>
       <h1>Supply Labs</h1>
@@ -59,6 +99,9 @@ function Home() {
         tableName={"Usuários"}
         orderFunction={order}
       />
+      <div>
+        <ul>{pages}</ul>
+      </div>
     </>
   );
 }
