@@ -1,30 +1,34 @@
-import React from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import React, { useState, useEffect } from "react";
+
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 function Maps({ location }) {
-  let center = {
-    lat: -3.745,
-    lng: -38.523,
-  };
+  const [center, setCenter] = useState({ lat: -3.745, lng: -38.523 });
+
+  useEffect(() => {
+    if (location !== undefined) {
+      setCenter({
+        lat: parseFloat(location.lat),
+        lng: parseFloat(location.lng),
+      });
+    }
+  }, [location]);
 
   const containerStyle = {
     width: "100%",
-    height: "400px",
+    height: "200px",
+    marginTop: "5px",
   };
 
-  if (location !== undefined) {
-    center.lat = parseFloat(location.lat);
-    center.lng = parseFloat(location.lng);
-    console.log(center);
-  }
+  const onLoad = marker => {
+    console.log("marker: ", marker);
+  };
 
   return (
     <LoadScript googleMapsApiKey="AIzaSyAt1OZr8cZurOSzbIk8xvUxyikSkvvRThE">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-      ></GoogleMap>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+        <Marker onLoad={onLoad} position={center} />
+      </GoogleMap>
     </LoadScript>
   );
 }

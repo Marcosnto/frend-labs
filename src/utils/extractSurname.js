@@ -44,7 +44,7 @@ function extractSurname(data) {
 
   let cont = 0;
 
-  data.map(user => {
+  data.forEach(user => {
     user.name = newNames[cont];
     user.surname = newNames[cont + 1];
     newData.push(user);
