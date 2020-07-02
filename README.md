@@ -32,9 +32,14 @@ Porém os dados não serão exibidos, pois precisamos iniciar a API.
 ### API
 Usaremos a lib [json-server](https://github.com/typicode/json-server). Ela irá simular uma API a partir de um arquivo _json_, o qual está localizado na raiz do projeto com o nome **'db.json'**
 
+Para instalar usaremos:
+```
+yarn add json-server ou npm install -g json-server
+```
+
 Por padrão, o _json-server_ é executado na porta 3000. Para evitar conflito com o projeto mudamos a porta para 3333 através do arquivo _json-server.json_. 
 
-Como já está como dependência do projeto, apenas será necessário inicializa-la
+Para iniciar, abra o terminal e execute o comando:
 ```
 yarn json-server db.json ou npm run json-server --watch db.json
 ```
