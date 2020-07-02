@@ -4,9 +4,12 @@ Projeto realizado com finalidade de teste para vaga de desenvolvedor na Supply L
 
 ### Como executar o projeto
 
-1. Clone o repositório 
+1. Clone o repositório e entre no diretório do projeto
 ```
 git clone https://github.com/Marcosnto/supply-labs-test.git
+```
+```
+cd /supply-labs-test.git
 ```
 
 2. Mude para a branch 'release/marcos-neto'
@@ -33,7 +36,13 @@ Por padrão, o _json-server_ é executado na porta 3000. Para evitar conflito co
 
 Como já está como dependência do projeto, apenas será necessário inicializa-la
 ```
-yarn json-server ou json-server --watch db.json
+yarn json-server db.json ou npm run json-server --watch db.json
 ```
 
 A partir disso, basta dar um F5 na aba do projeto no navegador e os dados serão exibidos juntamente com as funcionalidades. 😊 
+
+### Testes 
+O projeto possui 2 testes automatizados, para executa-los utilize o comando:
+```
+yarn test ou npm test
+```
