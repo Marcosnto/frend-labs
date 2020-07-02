@@ -99,6 +99,7 @@ function Home() {
     <>
       <Title>Supply Labs</Title>
       <Table
+        data-testid="table"
         tableHead={tableHead}
         tableData={data}
         tableDataItem={tableDataItem}
