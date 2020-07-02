@@ -15,6 +15,7 @@ export const TableStyle = styled.table`
   margin-top: 10px;
   tbody {
     td {
+      background-color: #fff;
       padding: 8px 5px;
       border: solid 1px black;
 
