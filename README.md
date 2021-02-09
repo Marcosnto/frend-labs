@@ -1,15 +1,15 @@
-## Supply Labs Test
+## SL Test
 
-Projeto realizado com finalidade de teste para vaga de desenvolvedor na Supply Labs
+Projeto realizado com finalidade de teste para vaga de desenvolvedor na SL
 
 ### Como executar o projeto
 
 1. Clone o repositório e entre no diretório do projeto
 ```
-git clone https://github.com/Marcosnto/supply-labs-test.git
+git clone https://github.com/Marcosnto/sl-test.git
 ```
 ```
-cd /supply-labs-test.git
+cd /sl-test.git
 ```
 
 2. Mude para a branch 'release/marcos-neto'
