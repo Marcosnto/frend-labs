@@ -97,7 +97,7 @@ function Home() {
 
   return (
     <>
-      <Title>Supply Labs</Title>
+      <Title>Frend Labs</Title>
       <Table
         tableHead={tableHead}
         tableData={data}

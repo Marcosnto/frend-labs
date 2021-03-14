@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "google-map-react": "^1.1.7",
-    "json-server": "^0.16.1",
+    "json-server": "^0.16.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
